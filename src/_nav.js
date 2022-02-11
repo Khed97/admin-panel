@@ -47,14 +47,14 @@ const _nav = [
   },
   {
     component: CNavGroup,
-    name: 'Base',
+    name: 'Campaign',
     to: '/base',
     icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
     items: [
       {
         component: CNavItem,
-        name: 'Accordion',
-        to: '/base/accordion',
+        name: 'Blog',
+        to: '/base/bloghistory',
       },
       {
         component: CNavItem,
@@ -125,7 +125,7 @@ const _nav = [
   },
   {
     component: CNavGroup,
-    name: 'Buttons',
+    name: 'Blog Editor',
     to: '/buttons',
     icon: <CIcon icon={cilCursor} customClassName="nav-icon" />,
     items: [

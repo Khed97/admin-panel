@@ -15,9 +15,9 @@ import { DocsCallout, DocsExample } from 'src/components'
 const Accordion = () => {
   return (
     <CRow>
-      <CCol xs={12}>
+      {/* <CCol xs={12}>
         <DocsCallout name="Accordion" href="components/accordion" />
-      </CCol>
+      </CCol> */}
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
