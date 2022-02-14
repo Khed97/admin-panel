@@ -69,7 +69,7 @@ const AuthenticationPage = () => {
                 <CCardText>
                   {
 
-                    (blog.contents[0][1] == undefined) ? "The para is undefineed" : ((blog.contents[0][1].value.length > 100) ? ((blog.contents[0][1].value.slice(0, 100) + "....")) : (blog.contents[0][1].value))
+                     (blog.contents[0][1] == undefined) ? "The para is undefineed" : ((blog.contents[0][1].value.length > 100) ? ((blog.contents[0][1].value.slice(0, 100) + "....")) : (blog.contents[0][1].value))
                   }
 
                 </CCardText>
@@ -83,7 +83,7 @@ const AuthenticationPage = () => {
                   <CCol>
                     <div className="d-grid gap-2 d-md-flex justify-content-md-end">
 
-                      <CButton color="secondary" size="sm" onClick={() => { history.push({ pathname: "/Authenticationeditpage", }) }}
+                      <CButton color="secondary" size="sm" onClick={() => { history.push({ pathname: "/Authenticationeditpage",state: { id: blog._id } }) }}
                       >Authentication</CButton>
 
                     </div>
@@ -105,10 +105,7 @@ const AuthenticationPage = () => {
     <div >
 
 
-      <AppSidebar />
-      <div className="wrapper d-flex flex-column min-vh-100 bg-light "id="myAffix">
-        <AppHeader />
-        </div>
+     
       {[cardsArray]}
     </div>
 

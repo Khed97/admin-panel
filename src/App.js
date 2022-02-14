@@ -41,8 +41,8 @@ class App extends Component {
             <Route exact path="/500" name="Page 500" render={(props) => <Page500 {...props} />} />
             <Route exact path="/blogAuth" name="Authentication Page" render={(props) => <Authentication {...props} />} />
             <Route path="/" name="Home" render={(props) => <DefaultLayout {...props} />} />
-            <Route exact path="/Authenticationeditpage" name="AuthenticationEditPage" render={(props) => <AuthenticationEditPage {...props} />} />
-            {/* <Route exact path="/NewPage" name="newPage" render={(props) => <NewPage {...props} />} /> */}
+            <Route exact path="/Authenticationeditpage" name="AuthenticationEditPage" render={(props) => <AuthenticationEditPage {...props} />} /> 
+            <Route exact path="/NewPage" name="newPage" render={(props) => <NewPage {...props} />} /> 
           </Switch>
         </React.Suspense>
       </HashRouter>

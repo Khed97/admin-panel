@@ -276,11 +276,12 @@ const _nav = [
     name: 'AuthenticationEditPage',
     to: '/Authenticationeditpage',
   },
-  // {
-  //   component: CNavItem,
-  //   name: 'newPage',
-  //   to: '/NewPage',
-  // },
+  {
+    component: CNavItem,
+    name: 'newPage',
+    to: '/NewPage',
+   
+  },
   {
     component: CNavGroup,
     name: 'Pages',

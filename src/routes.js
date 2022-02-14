@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
@@ -54,7 +55,7 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 //pages
  const  AuthenticationEditPage= React.lazy(() => import('./views/pages/blogAuthenticationEdit/AuthenticationEditPage'))
  const  Authentication= React.lazy(() => import('./views/pages/blogAuthentication/AuthenticationPage'))
-
+ const   NewPage= React.lazy(() => import('./views/pages/new page/NewPage'))
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
@@ -103,6 +104,9 @@ const routes = [
 
   { path: '/Authenticationeditpage', name: 'AuthenticationEditPage', component: AuthenticationEditPage, exact: true  },
   { path: '/blogAuth', name: 'Authentication Page', component: Authentication },
+  { path: '/NewPage', name: 'newPage', component: NewPage}
+  
+
 ]
 
 export default routes

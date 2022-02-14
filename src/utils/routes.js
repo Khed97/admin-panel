@@ -5,6 +5,9 @@ export default {
         BASE_PATH:process.env.REACT_APP_SERVER_URL,
         APIS:{
             // GET API
+            GET_BLOGS_BY_BLOG_ID:async (data)=> {
+                return await apiGet(`/blog/${data}`,"BLOG_MS")
+            },
             GET_BLOG_CAMPAING: async (data)=> {
                 return await apiGet(`/blogcampaign${data}`,"BLOG_MS")
             },
