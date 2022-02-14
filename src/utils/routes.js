@@ -2,7 +2,7 @@ import {apiDelete, apiGet, apiPost, apiPostImage, apiPut} from './API';
 
 export default {
     "BLOG_MS":{
-        BASE_PATH:process.env.NEXT_PUBLIC_BASE_PATH,
+        BASE_PATH:process.env.REACT_APP_SERVER_URL,
         APIS:{
             // GET API
             GET_BLOG_CAMPAING: async (data)=> {
@@ -50,6 +50,8 @@ export default {
                 console.log("data---",data);
                 return await apiGet(`/blogownercontact/${data}`,"BLOG_MS")
             },
+            GET_BLOG_WAITING: async (data)=> { console.log("data---",data);
+            return await apiPost("/blog/getblogbystatus",data,"Blog_MS")},
             // POST API
             UPLOAD_BLOG_IMAGE: async (data)=> await apiPost("/image/unsplash",data,"BLOG_MS"),
             CREATE_BLOG_CAMPAIGN: async (data)=> await apiPost("/blogcampaign",data,"BLOG_MS"),

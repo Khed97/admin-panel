@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import classes from './BlogerHistory.module.css'
 import Link from 'next/link'
-import {EditOutlined,CaretRightOutlined,CaretLeftOutlined} from '@ant-design/icons';
+import { EditOutlined, CaretRightOutlined, CaretLeftOutlined } from '@ant-design/icons';
 // import routes  from "../../../utils/routes";
 import routes from "../../../utils/routes";
 // import {LoadingHistoryComponent} from "../../../shared/emptyBlogs/EmptyBlog"
-import {LoadingHistoryComponent} from "../../emptyBlogs/EmptyBlog"
+import { LoadingHistoryComponent } from "../../emptyBlogs/EmptyBlog"
 import { Empty } from 'antd';
 export default function BlogerHistory() {
 
     const [campaign, setBlogCampaign] = useState([]);
     const [loading, setLoading] = useState(true);
     const [pageNo, setPageNo] = useState(1)
-    const [ totalCount,setTotalCount ] = useState(0);
-    const [ isPageCount,setIsPageCount ] = useState(false)
+    const [totalCount, setTotalCount] = useState(0);
+    const [isPageCount, setIsPageCount] = useState(false)
 
-    const paginate =async (pageNo) =>{
+    const paginate = async (pageNo) => {
         const ownerId = localStorage.getItem('userId');
-        if(pageNo){
+        if (pageNo) {
             try {
                 setLoading(false);
                 const response = await routes.BLOG_MS.APIS.GET_BLOG_CAMPAING(`/campaign/${ownerId}?page=${pageNo}`)
@@ -41,19 +41,19 @@ export default function BlogerHistory() {
     useEffect(() => {
         paginate(pageNo);
         getBlogCampaignCountByOwnerId()
-    }, [pageNo,isPageCount]);
-    
-    const nextPage = (e) =>{
+    }, [pageNo, isPageCount]);
+
+    const nextPage = (e) => {
         e.preventDefault()
         setPageNo(pageNo + 1);
-        if(totalCount.blogCampaignCount <= (pageNo*5)+5) setIsPageCount(true)
+        if (totalCount.blogCampaignCount <= (pageNo * 5) + 5) setIsPageCount(true)
     }
-    const previousPage = (e) =>{
+    const previousPage = (e) => {
         e.preventDefault()
         setIsPageCount(false)
-        if(pageNo === 1){
+        if (pageNo === 1) {
             window.alert("End of pages")
-        }else{
+        } else {
             setPageNo(pageNo - 1);
         }
     }
@@ -61,7 +61,7 @@ export default function BlogerHistory() {
     if (loading) {
         return (
             <div>
-              <LoadingHistoryComponent/>
+                <LoadingHistoryComponent />
             </div>
         )
     }
@@ -72,64 +72,64 @@ export default function BlogerHistory() {
                 <div className={`${classes.textcenter} ${classes.mb5} ${classes.leadhtext}`}>My CAMPAIGNS</div>
                 <Link href="/home/CardsEdit">
                     <div className={classes.light}>
-                        <div className={`${classes.circle} ${classes.long}`}id="edit">
-                            <p className={classes.Edit}><EditOutlined className={classes.writeIcon}/></p>
+                        <div className={`${classes.circle} ${classes.long}`} id="edit">
+                            <p className={classes.Edit}><EditOutlined className={classes.writeIcon} /></p>
                         </div>
                     </div>
                 </Link>
             </div>
-                            {
-                                campaign.length > 0 && 
-            <div className={`${classes.container}`}>
-                     <div className={classes.tableContainer}>
+            {
+                campaign.length > 0 &&
+                <div className={`${classes.container}`}>
+                    <div className={classes.tableContainer}>
                         <table className={classes.neumorphic}>
-                        <thead>
-                                    <tr>
-                                        <th className={classes.campaignName}>Campaign Name</th>
-                                        {/* <th className={classes.contact}>Contact</th>
+                            <thead>
+                                <tr>
+                                    <th className={classes.campaignName}>Campaign Name</th>
+                                    {/* <th className={classes.contact}>Contact</th>
                                         <th>Country</th> */}
-                                    </tr>
-                        </thead>
-                        <tbody>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 {
                                     campaign.length > 0 && campaign.map((curElem) => {
                                         return (
-                                            <Link 
-                                            href={{ 
-                                                pathname:'/home/campaign/[campaignId]',
-                                                query:{ campaignId:curElem._id }
+                                            <Link
+                                                href={{
+                                                    pathname: '/home/campaign/[campaignId]',
+                                                    query: { campaignId: curElem._id }
                                                 }}
-                                            key={curElem._id} >
+                                                key={curElem._id} >
                                                 <tr >
                                                     <td className={classes.campaignNameColoumn}>{curElem.campaignName}</td>
                                                     {/* <td> {curElem.userId}</td>
                                                     <td> {curElem.campaignOwnerId}</td> */}
                                                 </tr>
                                             </Link>
-                                    )
-                                    }) 
+                                        )
+                                    })
                                 }
-                        </tbody>
+                            </tbody>
                         </table>
-                        </div>
-            </div>
-                            }
+                    </div>
+                </div>
+            }
 
             {
-                campaign.length === 0 && <Empty  
-                                        image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
-                                        imageStyle={{
-                                        height: 60,
-                                        }}/>
+                campaign.length === 0 && <Empty
+                    image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+                    imageStyle={{
+                        height: 60,
+                    }} />
             }
             {
-                 campaign.length > 0 && 
+                campaign.length > 0 &&
                 <div className={classes.action_continer}>
-                <div className={classes.actions} >
-                    <button className={classes.actions_btn} onClick={(e)=>previousPage(e)}><CaretLeftOutlined className={classes.next_previous_Page}/></button>
-                    <h2 className={classes.actions_pageno}>{pageNo}</h2>
-                    { !isPageCount && <button className={classes.actions_btn} onClick={(e)=>nextPage(e)}><CaretRightOutlined className={classes.next_previous_Page}/></button> }
-                </div>
+                    <div className={classes.actions} >
+                        <button className={classes.actions_btn} onClick={(e) => previousPage(e)}><CaretLeftOutlined className={classes.next_previous_Page} /></button>
+                        <h2 className={classes.actions_pageno}>{pageNo}</h2>
+                        {!isPageCount && <button className={classes.actions_btn} onClick={(e) => nextPage(e)}><CaretRightOutlined className={classes.next_previous_Page} /></button>}
+                    </div>
                 </div>
             }
         </div>

@@ -22,7 +22,11 @@ export const apiGet = (url,serviceName) => {
 };
 
 export const apiPost = async (url, values,serviceName) => {
+  console.log("servername",serviceName)
+  
   let apiUrl = verifyService(serviceName);
+  //console.log("apiurl",apiUrl)
+  //let apiUrl ="http://65.2.88.54:3001/api/v1" ;
   return new Promise((resolve, reject) => {
     fetch(`${apiUrl}${url}`, {
       method: 'POST',
@@ -31,10 +35,12 @@ export const apiPost = async (url, values,serviceName) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
+      
     })
       .then(response => {
         try {
           resolve(response.json());
+         
         } catch (err) {
           reject(err);
         }
@@ -47,6 +53,7 @@ export const apiPost = async (url, values,serviceName) => {
 
 export const apiPut = (url, values ,serviceName) => {
   let apiUrl = verifyService(serviceName);
+ // let apiUrl ="api/v1" ;
   return new Promise((resolve, reject) => {
     fetch(`${apiUrl}${url}`, {
       method: 'PUT',
@@ -94,6 +101,7 @@ export const apiDelete = (url, serviceName) => {
 
 export const apiPostImage = async (url, values,serviceName) => {
   let apiUrl = verifyService(serviceName);
+//let apiUrl ="api/v1" ;
   return new Promise((resolve, reject) => {
     fetch(`${apiUrl}${url}`, {
       method: 'POST',
@@ -114,9 +122,13 @@ export const apiPostImage = async (url, values,serviceName) => {
 
 function verifyService(serviceName) {
   const urls = {
-    BLOG_MS: routes.BLOG_MS.BASE_PATH,
+   // BLOG_MS: ()=>{let a=routes.BLOG_MS["BASE_PATH"]; return a;} ,
+   BLOG_MS: routes.BLOG_MS.BASE_PATH ,
     USER_MS: routes.USER_MS.USERS_PATH,
-    ORGANIZATION_PROFILE: routes.ORGANIZATION_PROFILE.ORGANIZATION_PATH
+    ORGANIZATION_PROFILE: "routes.ORGANIZATION_PROFILE.ORGANIZATION_PATH"
   }
-  return urls[serviceName];
+  const retu = urls.BLOG_MS
+  console.log("retu",routes.BLOG_MS)
+  return retu
+ 
 }
