@@ -71,7 +71,8 @@ export default {
             UPDATE_BLOG_CAMPAING_BLOG: async (data)=> await apiPut("/blog",data,"BLOG_MS"),
             UPDATE_BLOG_COMMENT: async (data)=> await apiPut("/comment",data,"BLOG_MS"),
             UPDATE_BLOG_COMPANYCONTACT: async (data)=> await apiPut("/blogownercontact/",data,"BLOG_MS"),
-           
+            UPDATE_BLOG_AND_APPROVE:async (data)=> await apiPut("/blog/approveblog",data,"BLOG_MS"),
+            UPDATE_BLOG_AND_REJECT:async (data)=> await apiPut("/blog/rejectblog",data,"BLOG_MS"),
             //DELETE APIS
             DELETE_BLOG_COMMENT:async (id)=> await apiDelete(`/comment/${id}`,"BLOG_MS"),
             UNSUBSCRIBE_BLOG:async (id)=> await apiDelete(`/subscribers/${id}`,"BLOG_MS")

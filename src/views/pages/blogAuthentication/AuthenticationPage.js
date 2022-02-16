@@ -22,9 +22,7 @@ import {
 import routes from ".././../../utils/routes"
 import { AppHeader, AppSidebar } from 'src/components';
 import { useHistory } from 'react-router-dom';
-import AuthenticationEditPage from '../blogAuthenticationEdit/AuthenticationEditPage';
-import DefaultLayout from 'src/layout/DefaultLayout';
-
+  
 
 const AuthenticationPage = () => {
   const [blogs, setBlog] = useState([]);

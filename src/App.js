@@ -39,7 +39,7 @@ class App extends Component {
             />
             <Route exact path="/404" name="Page 404" render={(props) => <Page404 {...props} />} />
             <Route exact path="/500" name="Page 500" render={(props) => <Page500 {...props} />} />
-            <Route exact path="/blogAuth" name="Authentication Page" render={(props) => <Authentication {...props} />} />
+            <Route exact path="/Authentication" name="Authentication Page" render={(props) => <Authentication {...props} />} />
             <Route path="/" name="Home" render={(props) => <DefaultLayout {...props} />} />
             <Route exact path="/Authenticationeditpage" name="AuthenticationEditPage" render={(props) => <AuthenticationEditPage {...props} />} /> 
             <Route exact path="/NewPage" name="newPage" render={(props) => <NewPage {...props} />} /> 
