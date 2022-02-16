@@ -50,7 +50,6 @@ export default {
                 return await apiGet(`/subscribers/subscriber/${data}`,"BLOG_MS")
             },
             GET_BLOGOWNER_CONTACT_DETAILS:async (data)=> {
-                console.log("data---",data);
                 return await apiGet(`/blogownercontact/${data}`,"BLOG_MS")
             },
             GET_BLOG_WAITING: async (data)=> { console.log("data---",data);
@@ -65,7 +64,8 @@ export default {
             CREATE_BLOG_COMPANYCONTACT: async (data)=> await apiPost("/blogownercontact",data,"BLOG_MS"),
             CREATE_USER_MESSAGE: async (data)=> await apiPost("/userquery",data,"BLOG_MS"),
             SUBSCRIBE: async (data)=> await apiPost("/subscribers",data,"BLOG_MS"),
-            SEND_MAIL: async (data) => await apiPost("/sendMail",data,"BLOG_MS"),
+            SEND_MAIL_TO_BLOWOWNER: async (data) => await apiPost("/blogownercontact/sendMail",data,"BLOG_MS"),
+           
             // PUT API
             UPDATE_BLOG_CAMPAING: async (data)=> await apiPut("/blogcampaign",data,"BLOG_MS"),
             UPDATE_BLOG_CAMPAING_BLOG: async (data)=> await apiPut("/blog",data,"BLOG_MS"),
@@ -75,7 +75,8 @@ export default {
             UPDATE_BLOG_AND_REJECT:async (data)=> await apiPut("/blog/rejectblog",data,"BLOG_MS"),
             //DELETE APIS
             DELETE_BLOG_COMMENT:async (id)=> await apiDelete(`/comment/${id}`,"BLOG_MS"),
-            UNSUBSCRIBE_BLOG:async (id)=> await apiDelete(`/subscribers/${id}`,"BLOG_MS")
+            UNSUBSCRIBE_BLOG:async (id)=> await apiDelete(`/subscribers/${id}`,"BLOG_MS"),
+            
         }
     },
     "USER_MS":{

@@ -5,11 +5,14 @@ import React from 'react'
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
-
+const Allb = React.lazy(() => import('./views/theme/allb/Allb'))
 // Base
 const Accordion = React.lazy(() => import('./views/base/accordion/Accordion'))
 const Breadcrumbs = React.lazy(() => import('./views/base/breadcrumbs/Breadcrumbs'))
-const Cards = React.lazy(() => import('./views/base/cards/Cards'))
+const AllCampaign = React.lazy(() => import('./views/base/cards/AllCampaign'))
+// const Cards =  import('./views/base/cards/Cards')
+
+// const Cards = import ('./views/base/cards/Cards')
 const Carousels = React.lazy(() => import('./views/base/carousels/Carousels'))
 const Collapses = React.lazy(() => import('./views/base/collapses/Collapses'))
 const ListGroups = React.lazy(() => import('./views/base/list-groups/ListGroups'))
@@ -23,9 +26,13 @@ const Tables = React.lazy(() => import('./views/base/tables/Tables'))
 const Tooltips = React.lazy(() => import('./views/base/tooltips/Tooltips'))
 
 // Buttons
-const Buttons = React.lazy(() => import('./views/buttons/buttons/Buttons'))
-const ButtonGroups = React.lazy(() => import('./views/buttons/button-groups/ButtonGroups'))
-const Dropdowns = React.lazy(() => import('./views/buttons/dropdowns/Dropdowns'))
+// const Buttons = React.lazy(() => import('./views/buttons/buttons/Buttons'))
+const AllBlog = React.lazy(() => import('./views/buttons/buttons/AllBlog'))
+const WaitingBlog = React.lazy(() => import('./views/buttons/button-groups/WaitingBlog'))
+const Approved = React.lazy(() => import('./views/buttons/dropdowns/Approved'))
+const Blog = React.lazy(() => import('./views/buttons/buttons/blog/Blog'))
+
+
 
 //Forms
 const ChecksRadios = React.lazy(() => import('./views/forms/checks-radios/ChecksRadios'))
@@ -51,21 +58,29 @@ const Modals = React.lazy(() => import('./views/notifications/modals/Modals'))
 const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
+<<<<<<< HEAD
  
 //pages
  const  AuthenticationEditPage= React.lazy(() => import('./views/pages/blogAuthenticationEdit/AuthenticationEditPage'))
  const  Authentication= React.lazy(() => import('./views/pages/blogAuthentication/AuthenticationPage'))
  const   NewPage= React.lazy(() => import('./views/pages/new page/NewPage'))
+=======
+// const BlogPage = React.lazy(() => import ('./views/Blog/BlogPage'))
+// const blogs = React.lazy(() => import ('./views/Blog/blogs') )
+const Rejected = React.lazy(() => import ('./views/buttons/rejected/Rejected'))
+
+>>>>>>> main
 const routes = [
-  { path: '/', exact: true, name: 'Home' },
+  // { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },
-  { path: '/base', name: 'Base', component: Cards, exact: true },
+  { path: 'theme/allb' ,name:'Allb' ,component:Allb  },
+  // { path: '/base', name: 'Base', component: Cards, exact: true },
   { path: '/base/accordion', name: 'Accordion', component: Accordion },
   { path: '/base/breadcrumbs', name: 'Breadcrumbs', component: Breadcrumbs },
-  { path: '/base/cards', name: 'Cards', component: Cards },
+  { path: '/base/AllCampaign', name: 'AllCampaign', component: AllCampaign },
   { path: '/base/carousels', name: 'Carousel', component: Carousels },
   { path: '/base/collapses', name: 'Collapse', component: Collapses },
   { path: '/base/list-groups', name: 'List Groups', component: ListGroups },
@@ -77,10 +92,10 @@ const routes = [
   { path: '/base/spinners', name: 'Spinners', component: Spinners },
   { path: '/base/tables', name: 'Tables', component: Tables },
   { path: '/base/tooltips', name: 'Tooltips', component: Tooltips },
-  { path: '/buttons', name: 'Buttons', component: Buttons, exact: true },
-  { path: '/buttons/buttons', name: 'Buttons', component: Buttons },
-  { path: '/buttons/dropdowns', name: 'Dropdowns', component: Dropdowns },
-  { path: '/buttons/button-groups', name: 'Button Groups', component: ButtonGroups },
+  // { path: '/buttons', name: 'Buttons', component: Buttons, exact: true },
+  { path: '/buttons/AllBlog', name: 'AllBlog', component: AllBlog },
+  { path: '/buttons/Approved', name: 'Dropdowns', component: Approved },
+  { path: '/buttons/WaitingBlog', name: 'WaitingBlog', component: WaitingBlog },
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/forms', name: 'Forms', component: FormControl, exact: true },
   { path: '/forms/form-control', name: 'Form Control', component: FormControl },
@@ -101,12 +116,19 @@ const routes = [
   { path: '/notifications/modals', name: 'Modals', component: Modals },
   { path: '/notifications/toasts', name: 'Toasts', component: Toasts },
   { path: '/widgets', name: 'Widgets', component: Widgets },
+<<<<<<< HEAD
 
   { path: '/Authenticationeditpage', name: 'AuthenticationEditPage', component: AuthenticationEditPage, exact: true  },
   { path: '/blogAuth', name: 'Authentication Page', component: Authentication },
   { path: '/NewPage', name: 'newPage', component: NewPage}
   
 
+=======
+  // {path:'/blogPage' ,name:'blogPage' , component:BlogPage },
+  // {path:'blogPage/blogs' ,name:'blogs',component:blogs },
+  {path:'/buttons/rejected' ,name:'Rejected Blogs',component:Rejected },
+  {path:'/buttons/Blog',name:'Blog',component:Blog }
+>>>>>>> main
 ]
 
 export default routes

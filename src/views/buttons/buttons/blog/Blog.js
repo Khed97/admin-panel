@@ -1,48 +1,20 @@
 import React from 'react'
-import {
-  CAlert,
-  CAlertHeading,
-  CAlertLink,
-  CCard,
-  CCardBody,
-  CCardTitle,
-  CCardText,
-  CButton,
-  CCardHeader,
-  CCol,
-  CRow,
-} from '@coreui/react'
-import { DocsCallout, DocsExample } from 'src/components'
-import { Link } from "react-router-dom"
-import { CalendarOutlined } from '@ant-design/icons';
-import "./Alert.css"
-import AngularImg from 'src/assets/images/angular.jpg'
-
-import ButtonGroups from 'src/views/buttons/button-groups/WaitingBlog';
-import {
-  HomeOutlined,
-  SettingFilled,
-  SmileOutlined,
-  SyncOutlined,
-  LoadingOutlined,
-  CheckOutlined
-} from '@ant-design/icons';
-// import mapsimg from "./maps.png"
-
-
-
-const Alerts = () => {
+import { CButton, CCard, CCardBody, CCardTitle,CCardText,CCardHeader, CCol, CRow } from '@coreui/react'
+import {Link} from "react-router-dom";
+import mapsImg from "./maps.png"
+import rejectedImg from "./rejected.png"
+import stopwatchImg from "./stopwatch.png"
+import "./Blog.css"
+const Blog = () => {
   return (
-    <>
-    {/* <Link to={{ pathname: "notifications/alerts" }}>
-    <CButton href="">Back</CButton>
-    </Link> */}
-    {/* <CRow>
+    <CRow>
       <CCol sm={3}>
-        <CCard>
+        <CCard  className="waiting">
           <CCardBody>
             <CCardTitle>All waiting Blogs</CCardTitle>
             <CCardText>
+            {/* <SyncOutlined spin /> */}
+            {/* With supporting text below as a natural lead-in to additional content. */}
             <img className='check' src={stopwatchImg} />
             </CCardText>
             <Link to={{ pathname: "/buttons/WaitingBlog" }} >
@@ -52,10 +24,12 @@ const Alerts = () => {
         </CCard>
       </CCol>
       <CCol sm={3}>
-        <CCard>
+        <CCard className="Approved">
           <CCardBody>
             <CCardTitle>All Approved Blogs</CCardTitle>
             <CCardText>
+              {/* With supporting text below as a natural lead-in to additional content. */}
+              {/* <CheckOutlined className='check' /> */}
               <img className='check'  src={mapsImg} />
             </CCardText>
             <Link to={{ pathname: "/buttons/Approved" }}>
@@ -65,14 +39,15 @@ const Alerts = () => {
         </CCard>
       </CCol>
       <CCol sm={3}>
-        <CCard>
+        <CCard className="Rejected">
           <CCardBody>
             <CCardTitle>All  Rejected Blogs</CCardTitle>
             <CCardText>
+              {/* With supporting text below as a natural lead-in to additional content. */}
            <img className='check' src={rejectedImg} />
             </CCardText>
             <Link to={{ pathname: "/buttons/rejected" }}>
-              <CButton href="#">Rejected</CButton>
+              <CButton href="#" className='rej_btn' >Rejected</CButton>
             </Link>
           </CCardBody>
         </CCard>
@@ -80,9 +55,17 @@ const Alerts = () => {
 
 
 
-    </CRow> */}
-    </>
+    </CRow>
+    
+
+
+
+
+
+
+
+
   )
 }
 
-export default Alerts
+export default Blog

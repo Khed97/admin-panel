@@ -132,3 +132,12 @@ function verifyService(serviceName) {
   return retu
  
 }
+
+// function verifyService(serviceName) {
+//   const urls = {
+//     BLOG_MS: routes.BLOG_MS.BASE_PATH,
+//     USER_MS: routes.USER_MS.USERS_PATH,
+//     ORGANIZATION_PROFILE: routes.ORGANIZATION_PROFILE.ORGANIZATION_PATH
+//   }
+//   return urls[serviceName];
+// }

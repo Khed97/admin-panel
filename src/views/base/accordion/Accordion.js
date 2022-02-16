@@ -10,10 +10,12 @@ import {
   CAccordionHeader,
   CAccordionItem,
 } from '@coreui/react'
+import BlogHistory  from './BlogHistory'
 import { DocsCallout, DocsExample } from 'src/components'
 
 const Accordion = () => {
   return (
+    <>
     <CRow>
       {/* <CCol xs={12}>
         <DocsCallout name="Accordion" href="components/accordion" />
@@ -22,8 +24,9 @@ const Accordion = () => {
         <CCard className="mb-4">
           <CCardHeader>
             <strong>React Accordion</strong>
+            {/* <BlogHistory /> */}
           </CCardHeader>
-          <CCardBody>
+          {/* <CCardBody>
             <p className="text-medium-emphasis small">
               Click the accordions below to expand/collapse the accordion content.
             </p>
@@ -170,10 +173,13 @@ const Accordion = () => {
                 </CAccordionItem>
               </CAccordion>
             </DocsExample>
-          </CCardBody>
+          </CCardBody> */}  
         </CCard>
       </CCol>
     </CRow>
+              <BlogHistory />
+              </>
+
   )
 }
 
