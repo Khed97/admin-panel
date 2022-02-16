@@ -15,8 +15,9 @@ module.exports = {
   extends: [
     'react-app',
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
-    'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    // 'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
+  // REACT_APP_SERVER_URL=http://65.2.88.54:3001/api/v1
   plugins: ['react', 'react-hooks'],
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs

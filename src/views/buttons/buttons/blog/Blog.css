@@ -1,0 +1,18 @@
+.check{
+    height: 45px;
+    width: 45px;
+    /* margin-left: 40%; */
+}
+.Rejected{
+    background: #f30404;
+    color: white;
+}
+.Approved{
+    background: #44CC44;
+}
+.waiting{
+    background: cornsilk;
+}
+.rej_btn{
+    
+}

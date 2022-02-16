@@ -2,7 +2,7 @@ import {apiDelete, apiGet, apiPost, apiPostImage, apiPut} from './API';
 
 export default {
     "BLOG_MS":{
-        BASE_PATH:process.env.NEXT_PUBLIC_BASE_PATH,
+        BASE_PATH:process.env.REACT_APP_SERVER_URL,
         APIS:{
             // GET API
             GET_BLOG_CAMPAING: async (data)=> {
@@ -47,9 +47,18 @@ export default {
                 return await apiGet(`/subscribers/subscriber/${data}`,"BLOG_MS")
             },
             GET_BLOGOWNER_CONTACT_DETAILS:async (data)=> {
-                console.log("data---",data);
                 return await apiGet(`/blogownercontact/${data}`,"BLOG_MS")
             },
+          
+            GET_BLOG_WAITING: async (data)=> { console.log("data---",data);
+            return await apiPost("/blog/getblogbystatus",data,"Blog_MS")},
+
+
+            // GET_BLOG_WAITING: async (data)=> { 
+            //     return await apiGet("/blog/getblogbystatus/",data,"Blog_MS"),
+            //     console.log("data---11111")
+            // },
+
             // POST API
             UPLOAD_BLOG_IMAGE: async (data)=> await apiPost("/image/unsplash",data,"BLOG_MS"),
             CREATE_BLOG_CAMPAIGN: async (data)=> await apiPost("/blogcampaign",data,"BLOG_MS"),
@@ -60,7 +69,8 @@ export default {
             CREATE_BLOG_COMPANYCONTACT: async (data)=> await apiPost("/blogownercontact",data,"BLOG_MS"),
             CREATE_USER_MESSAGE: async (data)=> await apiPost("/userquery",data,"BLOG_MS"),
             SUBSCRIBE: async (data)=> await apiPost("/subscribers",data,"BLOG_MS"),
-            SEND_MAIL: async (data) => await apiPost("/sendMail",data,"BLOG_MS"),
+            SEND_MAIL_TO_BLOWOWNER: async (data) => await apiPost("/blogownercontact/sendMail",data,"BLOG_MS"),
+           
             // PUT API
             UPDATE_BLOG_CAMPAING: async (data)=> await apiPut("/blogcampaign",data,"BLOG_MS"),
             UPDATE_BLOG_CAMPAING_BLOG: async (data)=> await apiPut("/blog",data,"BLOG_MS"),
@@ -69,7 +79,8 @@ export default {
            
             //DELETE APIS
             DELETE_BLOG_COMMENT:async (id)=> await apiDelete(`/comment/${id}`,"BLOG_MS"),
-            UNSUBSCRIBE_BLOG:async (id)=> await apiDelete(`/subscribers/${id}`,"BLOG_MS")
+            UNSUBSCRIBE_BLOG:async (id)=> await apiDelete(`/subscribers/${id}`,"BLOG_MS"),
+            
         }
     },
     "USER_MS":{
