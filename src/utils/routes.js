@@ -5,6 +5,9 @@ export default {
         BASE_PATH:process.env.REACT_APP_SERVER_URL,
         APIS:{
             // GET API
+            GET_BLOGS_BY_BLOG_ID:async (data)=> {
+                return await apiGet(`/blog/${data}`,"BLOG_MS")
+            },
             GET_BLOG_CAMPAING: async (data)=> {
                 return await apiGet(`/blogcampaign${data}`,"BLOG_MS")
             },
@@ -49,16 +52,8 @@ export default {
             GET_BLOGOWNER_CONTACT_DETAILS:async (data)=> {
                 return await apiGet(`/blogownercontact/${data}`,"BLOG_MS")
             },
-          
             GET_BLOG_WAITING: async (data)=> { console.log("data---",data);
             return await apiPost("/blog/getblogbystatus",data,"Blog_MS")},
-
-
-            // GET_BLOG_WAITING: async (data)=> { 
-            //     return await apiGet("/blog/getblogbystatus/",data,"Blog_MS"),
-            //     console.log("data---11111")
-            // },
-
             // POST API
             UPLOAD_BLOG_IMAGE: async (data)=> await apiPost("/image/unsplash",data,"BLOG_MS"),
             CREATE_BLOG_CAMPAIGN: async (data)=> await apiPost("/blogcampaign",data,"BLOG_MS"),
@@ -76,7 +71,8 @@ export default {
             UPDATE_BLOG_CAMPAING_BLOG: async (data)=> await apiPut("/blog",data,"BLOG_MS"),
             UPDATE_BLOG_COMMENT: async (data)=> await apiPut("/comment",data,"BLOG_MS"),
             UPDATE_BLOG_COMPANYCONTACT: async (data)=> await apiPut("/blogownercontact/",data,"BLOG_MS"),
-           
+            UPDATE_BLOG_AND_APPROVE:async (data)=> await apiPut("/blog/approveblog",data,"BLOG_MS"),
+            UPDATE_BLOG_AND_REJECT:async (data)=> await apiPut("/blog/rejectblog",data,"BLOG_MS"),
             //DELETE APIS
             DELETE_BLOG_COMMENT:async (id)=> await apiDelete(`/comment/${id}`,"BLOG_MS"),
             UNSUBSCRIBE_BLOG:async (id)=> await apiDelete(`/subscribers/${id}`,"BLOG_MS"),

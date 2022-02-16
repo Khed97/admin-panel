@@ -295,6 +295,22 @@ const _nav = [
     name: 'Extras',
   },
   {
+    component: CNavItem,
+    name: 'Authentication Page',
+    to: '/blogAuth',
+  },
+  {
+    component: CNavItem,
+    name: 'AuthenticationEditPage',
+    to: '/Authenticationeditpage',
+  },
+  {
+    component: CNavItem,
+    name: 'newPage',
+    to: '/NewPage',
+   
+  },
+  {
     component: CNavGroup,
     name: 'Pages',
     icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
@@ -319,6 +335,7 @@ const _nav = [
         name: 'Error 500',
         to: '/500',
       },
+      
     ],
   },
 ]
