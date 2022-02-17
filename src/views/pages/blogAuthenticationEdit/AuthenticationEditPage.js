@@ -8,8 +8,8 @@ const AuthenticationEditPage = () => {
   const [blogs, setBlog] = useState(null);
   async function getBlogbyId(id) {
 
-    const ownerId = localStorage.getItem('userId');
-   console.log("ovner",ownerId)
+    // const ownerId = localStorage.getItem('userId');
+  //  console.log("ovner",ownerId)
     try {
       const response = await routes.BLOG_MS.APIS.GET_BLOGS_BY_BLOG_ID(id)
       console.log("response data", response)
@@ -20,11 +20,13 @@ const AuthenticationEditPage = () => {
     }
   }
   ;
- localStorage.setItem("BId",location.state.id);
+//  localStorage.setItem("BId",location.state.id);
   useEffect(() => {
     
-     
-       let id =location.state==undefined?localStorage.getItem('BId'):location.state.id
+     let id = location.state.id;
+
+    //let id ="620ceadb78fe0283ee1fed18";
+       //let id =location.state==undefined?localStorage.getItem('BId'):location.state.id
        getBlogbyId(id);
     
 
