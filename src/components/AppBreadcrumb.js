@@ -20,8 +20,8 @@ const AppBreadcrumb = () => {
       const currentPathname = `${prev}/${curr}`
       breadcrumbs.push({
         pathname: currentPathname,
-        name: getRouteName(currentPathname, routes),
-        active: index + 1 === array.length ? true : false,
+        // name: getRouteName(currentPathname, routes),
+        // active: index + 1 === array.length ? true : false,
       })
       return currentPathname
     })
