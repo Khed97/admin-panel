@@ -1,7 +1,9 @@
 import routes from "./routes"
 
 export const apiGet = (url,serviceName) => {
+  console.log("serr",serviceName);
   let apiUrl = verifyService(serviceName);
+  console.log("urrrlll",apiUrl);
   return new Promise((resolve, reject) => {
     fetch(`${apiUrl}${url}`, {
       method: 'GET',
@@ -22,7 +24,7 @@ export const apiGet = (url,serviceName) => {
 };
 
 export const apiPost = async (url, values,serviceName) => {
-  console.log("servername",serviceName)
+  // console.log("servername",serviceName)
   
   let apiUrl = verifyService(serviceName);
   //console.log("apiurl",apiUrl)
@@ -121,19 +123,23 @@ export const apiPostImage = async (url, values,serviceName) => {
 };
 
 function verifyService(serviceName) {
+  console.log("serviece",serviceName);
   const urls = {
    // BLOG_MS: ()=>{let a=routes.BLOG_MS["BASE_PATH"]; return a;} ,
-   BLOG_MS: routes.BLOG_MS.BASE_PATH ,
+    BLOG_MS: routes.BLOG_MS.BASE_PATH ,
     USER_MS: routes.USER_MS.USERS_PATH,
     ORGANIZATION_PROFILE: routes.ORGANIZATION_PROFILE.ORGANIZATION_PATH
   }
-  const retu = urls.BLOG_MS
+  const retu = urls[serviceName]
   console.log("retu",routes.BLOG_MS)
   return retu
  
 }
 
 // function verifyService(serviceName) {
+//   console.log("rou---",routes.BLOG_MS.BASE_PATH);
+//   console.log("service---",serviceName);
+
 //   const urls = {
 //     BLOG_MS: routes.BLOG_MS.BASE_PATH,
 //     USER_MS: routes.USER_MS.USERS_PATH,

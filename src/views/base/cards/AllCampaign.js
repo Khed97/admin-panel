@@ -52,12 +52,16 @@ const Cards = () => {
   //           console.log("errors" + error);
   //       }
   //   }
+
   const paginate =async () =>{
+
         try {
             setLoading(false);
+
             const response = await routes.BLOG_MS.APIS.GET_BLOG_CAMPAING(`/`)
             setBlogCampaign(response);
-            console.log("response",response.campaignName);
+            console.log("response from campaignn",response);
+            // console.log("response",response.campaignName);
             // console.log("name",campaign);
             } catch (error) {
             setLoading(false);
@@ -102,7 +106,9 @@ const Cards = () => {
           <CCardBody>
             <Link to="/buttons">
               <CRow xs={{ cols: 1, gutter: 4 }} md={{ cols: 3 }}>
+
                 {/* <CCol xs> */}
+                {/* <CRow> */}
                 { campaign.map((curElem,index) => {
 
 
