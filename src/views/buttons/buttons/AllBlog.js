@@ -37,7 +37,7 @@ const AllBlog = () => {
     try {
       const response = await routes.BLOG_MS.APIS.GET_BLOG_CAMPAING_BLOG()
       setBlogCampaign(response);
-      // console.log("alll blogs",response);
+      console.log("alll blogs",response);
       // console.log("responssse", response);
       // console.log("name",campaign);
     } catch (error) {
@@ -53,31 +53,7 @@ const AllBlog = () => {
     {/* <Link to={{ pathname: "notifications/alerts" }}>
     <CButton href="">Back</CButton>
     </Link> */}
-   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <CRow>
+   <CRow>
 
 
 
@@ -106,7 +82,7 @@ const AllBlog = () => {
                 {(blogData.title && blogData.title.length > 30) ? blogData.title.slice(0, 30) : blogData.title} ...
               </h1>
               <p className="blogParagraph" >
-                {blogParas.length > 0 ? blogParas[0].value.slice(0, 90) : "its dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk"}...
+                {blogParas.length > 0 ? blogParas[0].value.slice(0,50) : "its dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk bolteits dsk"}...
               </p>
             </div>
 

@@ -8,10 +8,10 @@ import { CBreadcrumb, CBreadcrumbItem } from '@coreui/react'
 const AppBreadcrumb = () => {
   const currentLocation = useLocation().pathname
   const getRouteName = (pathname, routes) => {
-    console.log("pathname",routes)
+    // console.log("pathname",routes)
     const currentRoute = routes.find((route) => route.path === pathname)
-    console.log("currentRoute",currentRoute)
-    return currentRoute.name
+    // console.log("currentRoute",currentRoute)
+    // return currentRoute.name
   }
 
   const getBreadcrumbs = (location) => {
